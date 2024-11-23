@@ -1,4 +1,4 @@
-package lab02.src;
+package lab03;
 
 public class DigitalVideoDisc {
     private String title;
