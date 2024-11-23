@@ -1,4 +1,4 @@
-package lab02.src;
+package lab03;
 
 public class Aims {
     public static void main(String[] args) {

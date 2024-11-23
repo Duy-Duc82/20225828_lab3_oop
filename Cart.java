@@ -1,4 +1,4 @@
-package lab02.src;
+package lab03;
 
 public class Cart {
     // Maximum number of DVDs allowed in the cart
@@ -21,10 +21,28 @@ public class Cart {
         }
     }
 
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+                itemsOrdered[qtyOrdered] = disc;
+                qtyOrdered++;
+                System.out.println("DVD \"" + disc.getTitle() + "\" has been added to the cart.");
+            } else {
+                System.out.println("The cart is full. Cannot add \"" + disc.getTitle() + "\".");
+                break;
+            }
+        }
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        addDigitalVideoDisc(dvd2);
+        addDigitalVideoDisc(dvd1);
+    }
+
     // Remove a DVD from the cart
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         boolean found = false;
-        for (int i = 0; i < qtyOrdered; i++) {
+        for (int i = 0;  i < qtyOrdered; i++) {
             if (itemsOrdered[i] == disc) {
                 found = true;
                 // Shift elements to fill the gap
